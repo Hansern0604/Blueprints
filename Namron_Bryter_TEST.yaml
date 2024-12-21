@@ -192,7 +192,7 @@ action:
           - "{{ command == move_with_on_off }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
-          - "{{ move_mode == 0 }}"
+          - "{{ args == [0,50] }}"
         sequence: !input channel_one_on_long
         
       - conditions:
@@ -203,7 +203,7 @@ action:
         sequence: !input channel_one_on_stop
 
       - conditions:
-          - "{{ command == off }}"
+          - "{{ command == 'off' }}"
           - "{{ cluster_id == 6 }}"
           - "{{ endpoint_id == 1 }}"
           - "{{ args == [] }}"
