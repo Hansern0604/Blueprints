@@ -203,7 +203,7 @@ action:
         sequence: !input channel_one_on_stop
 
       - conditions:
-          - "{{ command == 'off' }}"
+          - "{{ command == off }}"
           - "{{ cluster_id == 6 }}"
           - "{{ endpoint_id == 1 }}"
           - "{{ args == [] }}"
