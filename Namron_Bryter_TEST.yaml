@@ -189,7 +189,6 @@ action:
         sequence: !input channel_one_on_short
 
       - conditions:
-          - "{{ command == move_with_on_off }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
           - "{{ args == [0,50] }}"
