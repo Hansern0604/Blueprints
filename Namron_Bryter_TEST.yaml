@@ -1,5 +1,5 @@
 blueprint:
-  name: ZHA - Namron 1, 2 og 4 kanal bryter
+  name: ZHA - Namron 4-kanal bryter
   description: |
     Controll lights and other with Namron zigbee remote
 
@@ -192,11 +192,11 @@ action:
           - "{{ command == 'move_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
-          - "{{ move_mode == 'MoveMode.Up' }}"
+          - "{{ move_mode == 0 }}"
         sequence: !input channel_one_on_long
         
       - conditions:
-          - "{{ command == 'stop' }}"
+          - "{{ command == 'stop_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
           - "{{ args == [] }}"
@@ -210,17 +210,17 @@ action:
         sequence: !input channel_one_off_short
 
       - conditions:
-          - "{{ command == 'move_with_on_off' }}"
+          - "{{ command == 'move' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
-          - "{{ move_mode == 'MoveMode.Down' }}"
+          - "{{ move_mode == 1 }}"
         sequence: !input channel_one_off_long
         
       - conditions:
           - "{{ command == 'stop' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
-          - "{{ args == [] }}"
+          - "{{ args == [0,0] }}"
         sequence: !input channel_one_off_stop
 #-------------------------------------------------------      
       - conditions:
@@ -234,11 +234,11 @@ action:
           - "{{ command == 'move_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 2 }}"
-          - "{{ move_mode == 'MoveMode.Up' }}"
+          - "{{ move_mode == 0 }}"
         sequence: !input channel_two_on_long
         
       - conditions:
-          - "{{ command == 'stop' }}"
+          - "{{ command == 'stop_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 2 }}"
           - "{{ args == [] }}"
@@ -252,17 +252,17 @@ action:
         sequence: !input channel_two_off_short
 
       - conditions:
-          - "{{ command == 'move_with_on_off' }}"
+          - "{{ command == 'move' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 2 }}"
-          - "{{ move_mode == 'MoveMode.Down' }}"
+          - "{{ move_mode == 1 }}"
         sequence: !input channel_two_off_long
         
       - conditions:
           - "{{ command == 'stop' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 2 }}"
-          - "{{ args == [] }}"
+          - "{{ args == [0,0] }}"
         sequence: !input channel_two_off_stop
 #-------------------------------------------------------        
       - conditions:
@@ -276,11 +276,11 @@ action:
           - "{{ command == 'move_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 3 }}"
-          - "{{ move_mode == 'MoveMode.Up' }}"
+          - "{{ move_mode == 0 }}"
         sequence: !input channel_three_on_long
         
       - conditions:
-          - "{{ command == 'stop' }}"
+          - "{{ command == 'stop_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 3 }}"
           - "{{ args == [] }}"
@@ -294,17 +294,17 @@ action:
         sequence: !input channel_three_off_short
 
       - conditions:
-          - "{{ command == 'move_with_on_off' }}"
+          - "{{ command == 'move' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 3 }}"
-          - "{{ move_mode == 'MoveMode.Down' }}"
+          - "{{ move_mode == 1 }}"
         sequence: !input channel_three_off_long
         
       - conditions:
           - "{{ command == 'stop' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 3 }}"
-          - "{{ args == [] }}"
+          - "{{ args == [0,0] }}"
         sequence: !input channel_three_off_stop
 #-------------------------------------------------------     
       - conditions:
@@ -318,11 +318,11 @@ action:
           - "{{ command == 'move_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 4 }}"
-          - "{{ move_mode == 'MoveMode.Up' }}"
+          - "{{ move_mode == 0 }}"
         sequence: !input channel_four_on_long
         
       - conditions:
-          - "{{ command == 'stop' }}"
+          - "{{ command == 'stop_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 4 }}"
           - "{{ args == [] }}"
@@ -336,17 +336,17 @@ action:
         sequence: !input channel_four_off_short
 
       - conditions:
-          - "{{ command == 'move_with_on_off' }}"
+          - "{{ command == 'move' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 4 }}"
-          - "{{ move_mode == 'MoveMode.Down' }}"
+          - "{{ move_mode == 1 }}"
         sequence: !input channel_four_off_long
         
       - conditions:
           - "{{ command == 'stop' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 4 }}"
-          - "{{ args == [] }}"
+          - "{{ args == [0,0] }}"
         sequence: !input channel_four_off_stop
 #-------------------------------------------------------        
     
