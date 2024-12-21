@@ -191,7 +191,7 @@ action:
       - conditions:
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
-          - "{{ move_mode == 0 }}"
+          - "{{ args == [0,50] }}"
         sequence: !input channel_one_on_long
         
       - conditions:
