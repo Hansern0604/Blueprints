@@ -189,13 +189,14 @@ action:
         sequence: !input channel_one_on_short
 
       - conditions:
+          - "{{ command == 'move_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
-          - "{{ args == [0,50] }}"
+          - "{{ move_mode == 0 }}"
         sequence: !input channel_one_on_long
         
       - conditions:
-          - "{{ command == stop_with_on_off }}"
+          - "{{ command == 'stop_with_on_off' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
           - "{{ args == [] }}"
@@ -209,14 +210,14 @@ action:
         sequence: !input channel_one_off_short
 
       - conditions:
-          - "{{ command == move }}"
+          - "{{ command == 'move' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
           - "{{ move_mode == 1 }}"
         sequence: !input channel_one_off_long
         
       - conditions:
-          - "{{ command == stop }}"
+          - "{{ command == 'stop' }}"
           - "{{ cluster_id == 8 }}"
           - "{{ endpoint_id == 1 }}"
           - "{{ args == [0,0] }}"
